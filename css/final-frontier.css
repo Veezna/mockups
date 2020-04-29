@@ -1,0 +1,181 @@
+/** final-frontier.css
+ * CSS rules for the final frontier CMS app 
+ * 
+ * Place your custom CSS rules in this document 
+ */
+
+@font-face {
+      font-family: 'tngcreditsfont';
+       src: url(../assets/TNGCredits.woff) format("woff"),
+       url(../assets/TNG_Credits.TTF) format("ttf");
+    }
+
+h1,h2,h3,h4{
+  font-family:tngcreditsfont;
+}
+
+
+.search{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+.header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100vw;
+    padding-bottom:20px;
+    
+}
+
+
+title{
+    text-align: center;
+}
+
+body {
+    font-family: Verdanda;
+  
+}
+
+p {
+    font-family: Verdanda;
+}
+
+
+
+.cards{
+    
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-column-gap:10px;
+    grid-row-gap:10px;
+    
+}
+
+.card {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    box-shadow: 5px 5px 5px grey;
+    border-radius: 30px;
+    min-height: 350px;
+    font-family: Verdanda;
+    background-color:white;
+    
+    overflow-y: auto;
+}
+
+
+
+.card h2{
+    text-align:left;
+    padding-bottom:0px;
+    padding-left:10px;
+    
+}
+
+.readmore.button{
+    text-align:center;
+    padding-top:10px;
+
+}
+
+.card.expanded .images{
+      display:grid;
+      grid-template-columns:1fr 1fr 1fr;
+}
+
+.card.gallery img{
+    display:none;
+     border: 1px solid;
+      border-radius: 4px;
+      padding: 5px;
+}    
+
+.card.gallery img:nth-child(1){
+    display:block;
+}
+
+
+
+.card.article > .paratext {
+  max-height:200px;
+  overflow:hidden;
+    
+}
+
+
+.paratext{
+    padding:10px;
+
+}
+
+.card video{
+    padding: 5px
+    float: left;
+    max-height:100%;
+    max-width:100%;
+}
+
+.close-button {
+    display: none;
+}
+
+.expanded .close-button {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self:flex-end;
+}
+
+.card.expanded{
+   
+    left:0;
+    top:0;
+    border:none;
+    position:absolute;
+    height: 100vh;
+    width: 100vw;
+    margin:0;
+}
+
+.card.article.expanded > .paratext {
+  max-height:none;
+  overflow:auto;
+    
+}
+
+.card.article.expanded .readmore-button{
+    display:none;
+}
+
+.card.expanded .gallery-button{
+    display:none;
+}
+
+.card.gallery.expanded img{
+    display:block;
+}
+
+
+
+@media (max-width: 490px){
+    
+    
+    .cards{
+        grid-template-columns: 1fr;
+    }
+    
+}
